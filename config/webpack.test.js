@@ -21,7 +21,7 @@ var ENV = process.env.ENV = process.env.NODE_ENV = 'test';
  *
  * See: http://webpack.github.io/docs/configuration.html#cli
  */
-module.exports = function _localConfig(conf) {
+function makeConfig(conf) {
   var config = {
 
     /**
@@ -247,4 +247,6 @@ module.exports = function _localConfig(conf) {
     }
   };
   return config;
-};
+}
+
+module.exports = makeConfig;

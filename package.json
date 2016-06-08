@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/valor-software/ng2-webpack-config#readme",
   "dependencies": {
+    "angular2-hmr": "0.7.0",
     "awesome-typescript-loader": "0.19.0",
     "codelyzer": "0.0.22",
     "compression-webpack-plugin": "0.3.1",
@@ -32,6 +33,7 @@
     "exports-loader": "0.6.3",
     "expose-loader": "0.7.1",
     "file-loader": "0.8.5",
+    "html-loader": "0.4.3",
     "html-webpack-plugin": "2.19.0",
     "http-server": "0.9.0",
     "imports-loader": "0.6.5",
@@ -45,7 +47,7 @@
     "karma-phantomjs-launcher": "1.0.0",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "1.7.0",
-    "parse5": "^1.5.1",
+    "markdown-loader": "0.1.7",
     "phantomjs-polyfill": "0.0.2",
     "phantomjs-prebuilt": "2.1.7",
     "protractor": "3.3.0",
@@ -65,8 +67,6 @@
     "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1",
     "webpack-md5-hash": "0.0.5",
-    "webpack-merge": "0.14.0",
-    "angular2-hmr": "0.7.0",
-    "markdown-loader": "0.1.7"
+    "webpack-merge": "0.14.0"
   }
 }
