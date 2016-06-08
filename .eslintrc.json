@@ -1,0 +1,13 @@
+{
+  "extends": "./node_modules/eslint-config-valorsoft/.eslintrc.json",
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "no-var": 0,
+    "no-console": 0,
+    "prefer-template": 0,
+    "valid-jsdoc": 0,
+    "no-process-env": 0
+  }
+}
