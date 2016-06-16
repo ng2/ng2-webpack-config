@@ -5,47 +5,53 @@
 
 require('ts-node/register');
 var helpers = require('./helpers');
+var path = require('path');
 
-exports.config = {
-  baseUrl: 'http://localhost:3000/',
+module.exports = makeConfig;
 
-  // use `npm run e2e`
-  specs: [
-    helpers.root('components/**/**.e2e.ts'),
-    helpers.root('components/**/*.e2e.ts')
-  ],
-  exclude: [],
+function makeConfig(conf) {
+  return {
+    baseUrl: 'http://localhost:3000/',
 
-  framework: 'jasmine2',
+    // use `npm run e2e`
+    specs: [
+      helpers.root(path.join(conf.src, '/**/**.e2e.ts')),
+      helpers.root(path.join(conf.src, '/**/*.e2e.ts'))
+    ],
+    exclude: [],
 
-  allScriptsTimeout: 110000,
+    framework: 'jasmine2',
 
-  jasmineNodeOpts: {
-    showTiming: true,
-    showColors: true,
-    isVerbose: false,
-    includeStackTrace: false,
-    defaultTimeoutInterval: 400000
-  },
-  directConnect: true,
+    allScriptsTimeout: 110000,
 
-  capabilities: {
-    browserName: 'chrome',
-    chromeOptions: {
-      args: ['show-fps-counter=true']
-    }
-  },
+    jasmineNodeOpts: {
+      showTiming: true,
+      showColors: true,
+      isVerbose: false,
+      includeStackTrace: false,
+      defaultTimeoutInterval: 400000
+    },
+    directConnect: true,
 
-  /* global browser:false */
-  onPrepare() {
-    browser.ignoreSynchronization = true;
-  },
+    capabilities: {
+      browserName: 'chrome',
+      chromeOptions: {
+        args: ['show-fps-counter=true']
+      }
+    },
 
-  /**
-   * Angular 2 configuration
-   *
-   * useAllAngular2AppRoots: tells Protractor to wait for any angular2 apps on the page instead of just the one matching
-   * `rootEl`
-   */
-  useAllAngular2AppRoots: true
-};
+    /* global browser:false */
+    onPrepare() {
+      browser.ignoreSynchronization = true;
+    },
+
+    /**
+     * Angular 2 configuration
+     *
+     * useAllAngular2AppRoots: tells Protractor to wait for any angular2 apps on the page instead of just the one matching
+     * `rootEl`
+     */
+    useAllAngular2AppRoots: true
+  };
+}
+

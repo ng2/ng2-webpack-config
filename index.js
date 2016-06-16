@@ -1,4 +1,4 @@
-modules.exports = {
+module.exports = {
   webpack: {
     prod: require('./config/webpack.prod'),
     dev: require('./config/webpack.dev'),

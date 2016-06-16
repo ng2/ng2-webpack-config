@@ -5,7 +5,7 @@
 var path = require('path');
 
 // Helper functions
-var ROOT = path.resolve(__dirname, '..');
+var ROOT = process.cwd();
 
 console.log('root directory:', root() + '\n');
 

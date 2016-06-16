@@ -4,6 +4,7 @@
 'use strict';
 
 // Look in ./config for karma.conf.js
-const config = require('./path-to-config');
+// todo: replace with path to your config
+const config = require('./.ng2-config');
 
-module.exports = require('./config/karma.conf.js')(config);
+module.exports = require('ng2-webpack-config').karma(config);

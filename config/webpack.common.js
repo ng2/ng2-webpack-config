@@ -2,6 +2,8 @@
  * @author: @AngularClass
  */
 'use strict';
+const DEFAULT_INDEX_FILE = 'index.html';
+
 const path = require('path');
 const webpack = require('webpack');
 const helpers = require('./helpers');
@@ -13,8 +15,6 @@ const helpers = require('./helpers');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
-
-const DEFAULT_INDEX_FILE = 'index.html';
 
 function makeConfig(conf){
   /*
