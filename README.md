@@ -28,7 +28,8 @@ module.exports = {
   dist: 'dist',
   // entry html file
   htmlIndexes: ['index.html'],
-
+  // karma bundle src
+  spec: './spec-bundle.js',
   // webpack entry
   entry: {
     polyfills: './src/polyfills.ts',
