@@ -47,7 +47,8 @@ module.exports = function localConf(conf) {
         reporters: [
           {type: 'text-summary'},
           {type: 'json'},
-          {type: 'html'}
+          {type: 'html'},
+          {type: 'json', subdir: '.', file: 'coverage-final.json'}
         ]
       },
 

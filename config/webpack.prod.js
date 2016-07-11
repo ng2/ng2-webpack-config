@@ -10,7 +10,7 @@ const helpers = require('./helpers');
 // used to merge webpack configs
 const webpackMerge = require('webpack-merge');
 // the settings that are common to prod and dev
-const commonConfig = require('./webpack.common.js');
+const makeCommonConfig = require('./webpack.common.js');
 
 /**
  * Webpack Plugins
@@ -28,15 +28,18 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const ENV = process.env.NODE_ENV = process.env.ENV = 'production';
 const HOST = process.env.HOST || 'localhost';
 const PORT = process.env.PORT || DEFAULT_PORT;
-const METADATA = webpackMerge(commonConfig.metadata, {
-  host: HOST,
-  port: PORT,
-  ENV,
-  HMR: false
-});
 
 function makeConfig(conf) {
-  return webpackMerge(commonConfig, {
+    const commonConfig = makeCommonConfig(conf);
+
+    const METADATA = webpackMerge(commonConfig.metadata, {
+      host: HOST,
+      port: PORT,
+      ENV,
+      HMR: false
+    });
+
+    return webpackMerge(commonConfig, {
 
     /**
      * Switch loaders to debug mode.
@@ -73,7 +76,7 @@ function makeConfig(conf) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-filename
        */
-      filename: '[name].[chunkhash].bundle.js',
+      filename: '[name].[hash].bundle.js',
 
       /**
        * The filename of the SourceMaps for the JavaScript files.
@@ -81,7 +84,7 @@ function makeConfig(conf) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-sourcemapfilename
        */
-      sourceMapFilename: '[name].[chunkhash].bundle.map',
+      sourceMapFilename: '[name].[hash].bundle.map',
 
       /**
        * The filename of non-entry chunks as relative path
@@ -89,7 +92,7 @@ function makeConfig(conf) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-chunkfilename
        */
-      chunkFilename: '[id].[chunkhash].chunk.js'
+      chunkFilename: '[id].[hash].chunk.js'
 
     },
 
