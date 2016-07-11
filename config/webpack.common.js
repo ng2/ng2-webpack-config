@@ -68,7 +68,7 @@ function makeConfig(conf){
        *
        * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
        */
-      extensions: ['', '.ts', '.js'],
+      extensions: ['', '.ts', '.js', '.json'],
 
       // Make sure root is src
       root: helpers.root(conf.src),
