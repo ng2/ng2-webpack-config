@@ -135,7 +135,8 @@ function makeConfig(conf){
          */
         {
           test: /\.ts$/,
-          loader: 'awesome-typescript-loader',
+          // loader: 'awesome-typescript-loader',
+          loader: 'ts-loader',
           exclude: [/\.(spec|e2e)\.ts$/]
         },
 
