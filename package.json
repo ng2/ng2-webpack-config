@@ -1,6 +1,6 @@
 {
   "name": "ng2-webpack-config",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Generic webpack config for Angular2 applications by @AngularClass",
   "main": "index.js",
   "scripts": {
